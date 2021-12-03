@@ -20,15 +20,26 @@ description:         Please see the README on GitHub at <https://github.com/cass
 
 dependencies:
 - base >= 4.7 && < 5
+- text
 
 library:
   source-dirs: src
 
 executables:
-  day01-exe:
-    main:                Day01.hs
-    source-dirs:         app
+  aoc2021-day01-part1:
+    main: app/Day01/Part1.hs
     ghc-options:
+    - -main-is Day01.Part1.main
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2021
+
+  aoc2021-day01-part2:
+    main: app/Day01/Part2.hs
+    ghc-options:
+    - -main-is Day01.Part2.main
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
@@ -36,9 +47,9 @@ executables:
     - aoc2021
 
 tests:
-  aoc2021-test:
-    main:                Spec.hs
-    source-dirs:         test
+  day01-test:
+    main: Day01Spec.hs
+    source-dirs: test
     ghc-options:
     - -threaded
     - -rtsopts

@@ -24,30 +24,42 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Day01
+      Util
   other-modules:
       Paths_aoc2021
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , text
   default-language: Haskell2010
 
-executable day01-exe
-  main-is: Day01.hs
+executable aoc2021-day01-part1
+  main-is: app/Day01/Part1.hs
   other-modules:
       Paths_aoc2021
-  hs-source-dirs:
-      app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -main-is Day01.Part1.main -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aoc2021
     , base >=4.7 && <5
+    , text
   default-language: Haskell2010
 
-test-suite aoc2021-test
+executable aoc2021-day01-part2
+  main-is: app/Day01/Part2.hs
+  other-modules:
+      Paths_aoc2021
+  ghc-options: -main-is Day01.Part2.main -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoc2021
+    , base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+
+test-suite day01-test
   type: exitcode-stdio-1.0
-  main-is: Spec.hs
+  main-is: Day01Spec.hs
   other-modules:
       Paths_aoc2021
   hs-source-dirs:
@@ -56,4 +68,5 @@ test-suite aoc2021-test
   build-depends:
       aoc2021
     , base >=4.7 && <5
+    , text
   default-language: Haskell2010
