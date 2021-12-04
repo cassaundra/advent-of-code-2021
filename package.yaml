@@ -20,6 +20,7 @@ description:         Please see the README on GitHub at <https://github.com/cass
 
 dependencies:
 - base >= 4.7 && < 5
+- lens
 - megaparsec
 - text
 
@@ -56,6 +57,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - aoc2021
+    - lens
     - megaparsec
     - text
 
@@ -69,3 +71,4 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - aoc2021
+    - hspec
